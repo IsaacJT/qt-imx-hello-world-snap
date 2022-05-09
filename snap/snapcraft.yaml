@@ -49,6 +49,7 @@ apps:
     command: opt/hello-world/bin/hello-world
     environment:
       QT_PLUGIN_PATH: $SNAP/usr/plugins
+      QT_QPA_FONTDIR: $SNAP/usr/lib/${SNAPCRAFT_ARCH_TRIPLET}/fonts
     plugs:
       - opengl
       - hardware-observe
@@ -60,13 +61,9 @@ layout:
     bind: $SNAP/etc/glvnd
   /usr/share/X11/xkb:
     bind: $SNAP/usr/share/X11/xkb
-  /usr/share/fonts:
-    bind: $SNAP/usr/share/fonts
   /usr/share/glvnd:
     bind: $SNAP/usr/share/glvnd
   /usr/lib/${SNAPCRAFT_ARCH_TRIPLET}/dri:
     bind: $SNAP/usr/lib/${SNAPCRAFT_ARCH_TRIPLET}/dri
   /usr/share/libdrm:
     bind: $SNAP/usr/share/libdrm
-  /usr/lib/fonts:
-    bind: $SNAP/usr/lib/fonts
